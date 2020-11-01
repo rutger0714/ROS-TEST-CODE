@@ -28,12 +28,12 @@ def listener():
     rospy.Subscriber('width',Int32,width_callback)
     rospy.Subscriber('height',Int32,height_callback)
     
-rate = rospy.Rate(10)
+    rate = rospy.Rate(10)
 
-while not rospy.is_shutdown():
+    while not rospy.is_shutdown():
 
-    volume_publish.publish(volume)
-    rate.sleep() 
+        volume_publish.publish(volume)
+        rate.sleep() 
     
 if __name__ == '__main__':
     try:
