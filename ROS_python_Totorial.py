@@ -7,19 +7,19 @@ from std_msgs.msg import Int32
  height = 26
 
 def talker():
-    length_publish = rospy.publisher('length',Int 32, queue_size = 10)
-    width_publish = rosypy.publisher('width',Int 32, queue_size = 10)
-    height_publish = rospy.publisher('height',Int 32, queue_size = 10)
+    length_publish = rospy.Publisher('length',Int 32, queue_size = 10)
+    width_publish = rospy.Publisher('width',Int 32, queue_size = 10)
+    height_publish = rospy.Publisher('height',Int 32, queue_size = 10)
 
     rospy.init_node('Ros_python_Totorial')
 
-rate = rospy.Rate(10)
+    rate = rospy.Rate(10)
 
-while not rospy.is_shutdown():
-    length_publish.publish()
-    width_publish.publish()
-    height_publish.publish()
-    rate.sleep()
+    while not rospy.is_shutdown():
+        length_publish.publish()
+        width_publish.publish()
+        height_publish.publish()
+        rate.sleep()
 
 if __name__ == '__main__':
     try:

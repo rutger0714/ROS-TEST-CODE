@@ -22,7 +22,7 @@ def height_callback(data):
 volume = height*width*length
 
 def listener():
-    volume_publish = rospy.publisher('volume', Int32, queue_size = 10)
+    volume_publish = rospy.Publisher('volume', Int32, queue_size = 10)
     rospy.init_node('Subscriber_example')
     rospy.Subscriber('length',Int32, length_callback)
     rospy.Subscriber('width',Int32,width_callback)
@@ -31,7 +31,7 @@ def listener():
 rate = rospy.Rate(10)
 
 while not rospy.is_shutdown():
-    
+
     volume_publish.publish()
     rate.sleep() 
     
