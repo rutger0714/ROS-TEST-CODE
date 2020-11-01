@@ -10,9 +10,9 @@ def talker():
     global length
     global width
     global height
-    length_publish = rospy.Publisher('length',Int 32, queue_size = 10)
-    width_publish = rospy.Publisher('width',Int 32, queue_size = 10)
-    height_publish = rospy.Publisher('height',Int 32, queue_size = 10)
+    length_publish = rospy.Publisher('length',Int32, queue_size = 10)
+    width_publish = rospy.Publisher('width',Int32, queue_size = 10)
+    height_publish = rospy.Publisher('height',Int32, queue_size = 10)
 
     rospy.init_node('Ros_python_Totorial')
 
