@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import Int32
- 
- length = 5
- width = 10
- height = 26
+
+length = 5
+width = 10
+height = 26
 
 def talker():
     global length
