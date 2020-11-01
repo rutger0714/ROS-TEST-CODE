@@ -1,12 +1,15 @@
 #Testing for using python beyond the basics of ROS
 import rospy
 from std_msgs.msg import Int32
-
+ 
  length = 5
  width = 10
  height = 26
 
 def talker():
+    global length
+    global width
+    global height
     length_publish = rospy.Publisher('length',Int 32, queue_size = 10)
     width_publish = rospy.Publisher('width',Int 32, queue_size = 10)
     height_publish = rospy.Publisher('height',Int 32, queue_size = 10)
