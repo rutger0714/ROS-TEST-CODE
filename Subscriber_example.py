@@ -32,7 +32,7 @@ rate = rospy.Rate(10)
 
 while not rospy.is_shutdown():
 
-    volume_publish.publish()
+    volume_publish.publish(volume)
     rate.sleep() 
     
 if __name__ == '__main__':
