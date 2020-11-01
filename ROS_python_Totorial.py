@@ -16,9 +16,9 @@ def talker():
     rate = rospy.Rate(10)
 
     while not rospy.is_shutdown():
-        length_publish.publish()
-        width_publish.publish()
-        height_publish.publish()
+        length_publish.publish(length)
+        width_publish.publish(width)
+        height_publish.publish(height)
         rate.sleep()
 
 if __name__ == '__main__':

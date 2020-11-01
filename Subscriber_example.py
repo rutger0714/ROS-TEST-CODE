@@ -19,9 +19,10 @@ def height_callback(data):
     height = data.data
     print(height)
 
-volume = height*width*length
+
 
 def listener():
+    volume = height*width*length
     volume_publish = rospy.Publisher('volume', Int32, queue_size = 10)
     rospy.init_node('Subscriber_example')
     rospy.Subscriber('length',Int32, length_callback)
