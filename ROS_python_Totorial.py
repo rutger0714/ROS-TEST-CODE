@@ -1,4 +1,4 @@
-#Testing for using python beyond the basics of ROS
+#!/usr/bin/env python
 import rospy
 from std_msgs.msg import Int32
  
