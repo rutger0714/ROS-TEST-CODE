@@ -2,17 +2,24 @@
 import rospy
 from std_msgs.msg import Int32
 
-int length = 5
-int width = 10
-int height = 26
+ length = 5
+ width = 10
+ height = 26
 
 def talker():
-    length = rospy.publisher('length',Int 32, queue_size = 10)
-    width = rosypy.publisher('width',Int 32, queue_size = 10)
-    height = rospy.publisher('height',Int 32, queue_size = 10)
+    length_publish = rospy.publisher('length',Int 32, queue_size = 10)
+    width_publish = rosypy.publisher('width',Int 32, queue_size = 10)
+    height_publish = rospy.publisher('height',Int 32, queue_size = 10)
 
     rospy.init_node('Ros_python_Totorial')
 
+rate = rospy.Rate(10)
+
+while not rospy.is_shutdown():
+    length_publish.publish()
+    width_publish.publish()
+    height_publish.publish()
+    rate.sleep()
 
 if __name__ == '__main__':
     try:

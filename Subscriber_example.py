@@ -19,13 +19,21 @@ def height_callback(data):
     height = data.data
     print(height)
 
+volume = height*width*length
+
 def listener():
-    rospy.subscriber('length',Int32, length_callback)
-    rospy.subscirber('width',Int32,width_callback)
-    rospy.subscirber('height',Int32,height_callback)
-    int volume = height*width*length
+    volume_publish = rospy.publisher('volume', Int32, queue_size = 10)
     rospy.init_node('Subscriber_example')
-    rospy.publisher('volume', Int32, queue_size = 10)
+    rospy.Subscriber('length',Int32, length_callback)
+    rospy.Subscriber('width',Int32,width_callback)
+    rospy.Subscriber('height',Int32,height_callback)
+    
+rate = rospy.Rate(10)
+
+while not rospy.is_shutdown():
+    
+    volume_publish.publish()
+    rate.sleep() 
     
 if __name__ == '__main__':
     try:

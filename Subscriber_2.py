@@ -10,11 +10,9 @@ def volume_callback(data):
 
 
 def listener():
-    rospy.subscriber('volume',Int32, volume_callback )
+    rospy.Subscriber('volume',Int32, volume_callback )
     rospy.init_node('Subscriber_2.py')
-
-
-
+    rospy.spin()
 
 
 
