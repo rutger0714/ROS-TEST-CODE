@@ -30,7 +30,6 @@ def listener():
     global length
     global width
     global height
-    volume = height*width*length
     volume_publish = rospy.Publisher('volume', Int32, queue_size = 10)
     rospy.init_node('Subscriber_example')
     rospy.Subscriber('length',Int32, length_callback)
@@ -40,7 +39,7 @@ def listener():
     rate = rospy.Rate(10)
 
     while not rospy.is_shutdown():
-
+        volume = height*width*length
         volume_publish.publish(volume)
         rate.sleep() 
     
