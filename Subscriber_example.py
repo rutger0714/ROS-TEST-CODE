@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import Int32
-
+length = 0
+width = 0
+height = 0
 def length_callback(data):
     global length
     print("Given Length ")
@@ -23,6 +25,9 @@ def height_callback(data):
 
 
 def listener():
+    global length
+    global width
+    global height
     volume = height*width*length
     volume_publish = rospy.Publisher('volume', Int32, queue_size = 10)
     rospy.init_node('Subscriber_example')
