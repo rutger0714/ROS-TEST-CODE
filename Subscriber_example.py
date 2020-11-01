@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import Int32
+
 length = 0
 width = 0
 height = 0
+
 def length_callback(data):
     global length
     print("Given Length ")
